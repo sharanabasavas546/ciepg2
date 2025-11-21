@@ -1,20 +1,20 @@
-# Fuel Efficiency Calculator
+import sys
 
-# Provide input values directly in the code
-distance = 400.0   # in kilometers
-fuel_used = 20.0   # in liters
+# Give values inside the code
+sys.argv = ["fuel.py", "300", "20", "15"]   # distance, fuel used, mileage
 
-# Check if valid inputs are provided
-if distance > 0 and fuel_used > 0:
-    # Calculate mileage (fuel efficiency)
-    mileage = distance / fuel_used
+if len(sys.argv) == 4:
+    distance = float(sys.argv[1])
+    fuel_used = float(sys.argv[2])
+    mileage = float(sys.argv[3])
 
-    # Print the fuel efficiency report
-    print("------ Fuel Efficiency Report ------")
-    print("Distance Travelled :", distance, "km")
-    print("Fuel Used          :", fuel_used, "liters")
-    print("Fuel Efficiency    :", round(mileage, 2), "km per liter")
+    if fuel_used != 0:
+        efficiency = distance / fuel_used
+        print("Distance Travelled:", distance, "km")
+        print("Fuel Used:", fuel_used, "liters")
+        print("Mileage:", mileage, "km/l")
+        print("Fuel Efficiency:", round(efficiency, 2), "km/l")
+    else:
+        print("Fuel used cannot be zero!")
 else:
-    # If invalid values are provided
-    print("Error: Invalid input values!")
-    print("Distance and fuel used must be greater than zero.")
+    print("Usage: python fuel.py <distance> <fuel_used> <mileage>")
