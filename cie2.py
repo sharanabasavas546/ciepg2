@@ -1,8 +1,8 @@
 # Fuel Efficiency Calculator
 
 # Provide input values directly in the code
-distance = 500.0   # in kilometers
-fuel_used = 25.0   # in liters
+distance = 400.0   # in kilometers
+fuel_used = 20.0   # in liters
 
 # Check if valid inputs are provided
 if distance > 0 and fuel_used > 0:
